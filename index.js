@@ -1,22 +1,47 @@
 const semicircles = document.querySelectorAll('.semicircle');
 const timer = document.querySelector('.timer');
+const startButton = document.querySelector('#startButton')
 
 // input
 const hr = 0;
-const min = 25;
-const sec = 0;
+const min = 0;
+const sec = 10;
 
 const hours = hr * 3600000;
 const minutes = min * 60000;
 const seconds = sec * 1000;
 const setTime = hours + minutes + seconds;
-const startTime = Date.now();
-const futureTime = startTime + setTime;
 
-const timerLoop = setInterval(countDownTimer);
-countDownTimer();
 
-function countDownTimer() {
+let timerLoop;
+
+
+startButton.addEventListener('click', function(){
+    const startTime = Date.now();
+    const futureTime = startTime + setTime;
+
+    clearInterval(timerLoop);
+    resetSemicircles();
+    
+    
+    timerLoop = setInterval(function(){
+        countDownTimer(futureTime);
+    });
+    countDownTimer(futureTime);
+})
+
+function resetSemicircles() {
+    semicircles[0].style.transform = 'rotate(0deg)';
+    semicircles[1].style.transform = 'rotate(0deg)';
+    semicircles[2].style.display = 'block';
+    semicircles[0].style.display = 'block';
+    semicircles[1].style.display = 'block';
+}
+
+
+
+
+function countDownTimer(futureTime) {
     const currentTime = Date.now();
     const remainingTime = futureTime - currentTime;
     const angle = (remainingTime / setTime) * 360;
