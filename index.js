@@ -4,8 +4,8 @@ const startButton = document.querySelector('#startButton')
 
 // input
 const hr = 0;
-const min = 0;
-const sec = 10;
+const min = 25;
+const sec = 0;
 
 const hours = hr * 3600000;
 const minutes = min * 60000;
