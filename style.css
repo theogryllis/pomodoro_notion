@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #191919;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    position: relative; /* Ensures absolute positioning is relative to this container */
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#startButton {
+    position: absolute;
+    color: #191919;
+    font-size: 100px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    top: 30%; /* Adjust these values as needed to position the button */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the button exactly */
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10; /* Ensure it's above other content */
+}
+
+#startButton:hover {
+    color: white;
+    background-color: #191919;
+}
+
+
+/* Progress indicator */
+.circle-container {
+    width: 400px;
+    height: 400px;
+    background-color: #ddd;
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.semicircle {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: right center;
+}
+
+.semicircle:nth-child(1) {
+    background-color: #191919;
+    z-index: 2;
+}
+
+.semicircle:nth-child(2) {
+    background-color: #191919;
+    z-index: 3;
+    /* display: none; */
+}
+
+.semicircle:nth-child(3) {
+    background-color: #ddd;
+    z-index: 4;
+    /* display: none; */
+}
+
+.outermost-circle {
+    width: 390px;
+    height: 390px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 5;
+    /* display: none; */
+}
+
+.timer.container {
+    width: 330px;
+    height: 200px;
+    z-index: 6;
+}
+
+.timer {
+    width: 400px;
+    height: 100px;
+    z-index: 7;
+}
+
+.timer div {
+    font-size: 70px;
+    font-weight: 100;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 0 10px;
+}
+
+.timer .colon {
+    background-color: transparent;
+    width: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 15px;
+}
+
+#startButton {
+    margin-bottom: 20px; /* Adjust as needed for spacing above the timer */
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* Timer */
